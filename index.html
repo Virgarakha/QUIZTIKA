@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="in">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QUIZTIKA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .next2,
+        .next3,
+        .next4,
+        .next5,
+        .next6 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="head2">
+            <h1>X RPL 1</h1>
+            <h2>Smkn 6 Jember</h2>
+        </div>
+    </div>
+    <div class="q">
+        <div class="q2">
+            <h1>QUIZ<span>TIKA</span></h1>
+            <p>quiz ini berisi tentang matematika</p>
+        </div>
+    </div>
+    <div class="next1" id="next1">
+        <h1>BERAPAKAH 1 + 1 = </h1>
+        <input type="number" name="" id="jawaban1" placeholder="Masukkan jawaban">
+        <button onclick="kirim(1)">KIRIM</button>
+    </div>
+
+    <div class="next2" id="next2">
+        <h1>BERAPAKAH 2 + 2 = </h1>
+        <input type="number" name="" id="jawaban2" placeholder="Masukkan jawaban">
+        <button onclick="kirim(2)">KIRIM</button>
+    </div>
+
+    <div class="next3" id="next3">
+        <h1>BERAPAKAH 9 + 9 = </h1>
+        <input type="number" name="" id="jawaban3" placeholder="Masukkan jawaban">
+        <button onclick="kirim(3)">KIRIM</button>
+    </div>
+    <div class="next4" id="next4">
+        <h1>BERAPAKAH 2 x 4 = </h1>
+        <input type="number" name="" id="jawaban4" placeholder="Masukkan jawaban">
+        <button onclick="kirim(4)">KIRIM</button>
+    </div>
+    <div class="next5" id="next5">
+        <h1>BERAPAKAH 9 x 5 = </h1>
+        <input type="number" name="" id="jawaban5" placeholder="Masukkan jawaban">
+        <button onclick="kirim(5)">KIRIM</button>
+    </div>
+    <div class="next6" id="next6">
+        <h1>BERAPAKAH 4 + 6 = </h1>
+        <input type="number" name="" id="jawaban6" placeholder="Masukkan jawaban">
+        <button onclick="kirim(6)">KIRIM</button>
+    </div>
+
+    <script>
+        function kirim(soal) {
+            const jawaban = document.getElementById("jawaban" + soal).value;
+            const next = document.getElementById("next" + soal);
+            const benar = getCorrectAnswer(soal);
+
+            if (jawaban != benar) {
+                alert('Belajar lagi dek');
+            } 
+            else if(jawaban == ""){
+                alert('isi lah monyet')
+            }
+            else if(jawaban !== benar) {
+                alert('HOREEEEEEEEEEEEEEEEEEEEEEEE');
+                next.style.display = 'none';
+
+                if (soal < 6) {
+                    const nextSoal = document.getElementById("next" + (soal + 1));
+                    nextSoal.style.display = 'block';
+                }
+            }
+        }
+            // jawaban
+        function getCorrectAnswer(soal) {
+            switch (soal) {
+                case 1: return 2;
+                case 2: return 4;
+                case 3: return 18;
+                case 4: return 8;
+                case 5: return 45;
+                case 6: return 10;
+                default: return 0;
+            }
+        }
+    </script>
+    <div class="ig">
+        <div class="ig2">
+            <h1>Design : virgarakha</h1>
+            <h1>JS : Gabrial. FP</h1>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="foot2">
+            <div class="bg"></div>
+             <div class="f">
+                
+                <img width="30" height="30" src="https://img.icons8.com/color/48/new-post.png" alt="new-post"/>
+                <h1>virgakumara@gmail.com</h1>
+                <h1>rakhakumara070@gmail.com</h1>
+                <p>copyright by xrploskanamber</p>
+             </div>
+        </div>
+    </div>
+</body>
+
+</html>
